@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        body{
+            background-color: rgb(204, 152, 218);
+        }
+        .pcard{
+            border: 1.5px solid black;
+            border-radius: 15px;
+            padding: 10px;
+            height: 300px;
+            width: 300px;
+            margin: 80px;
+            margin-left: 390px;
+            background-color: rgb(164, 13, 239);
+            box-shadow: 0px 0px 30px 1px;
+        }
+        .pcard-img{
+            display: block;
+            margin: 10px auto;
+            border-radius: 7px 0px 7px 0px;
+            box-shadow: 1px 1.5px 3px 1px;
+        }
+        .pcard-heading{
+            text-align: center;
+            color: rgb(60, 9, 74);
+            font-size:25px;
+            margin-top: 37px;
+        }
+        .q-btn-container{
+            display: flex;
+            justify-content: space-around;
+            height: 30px;
+            margin-top: 40px;
+            
+        }
+        .btn{
+            cursor: pointer;
+            background-color: #a878b6;
+            border: none;
+            width: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pcard">
+        <img src="kingfisher.jpg"  height="150px" width="150px" class="pcard-img">
+        <h1 class="pcard-heading">KingFisher</h1>        
+           
+        <div class="q-btn-container">
+            <button type="button" class="btn" onclick="ChangeQuality('dec')">
+                -
+            </button>
+            <span id="quantity">1</span>
+            <button type="button" class="btn" onclick="ChangeQuality('inc')">
+                +
+            </button>
+        </div>
+    </div>
+    <script>
+        const quantityElement=document.getElementById("quantity");
+        let quantity = parseInt(quantityElement.innerText);
+
+        function ChangeQuality(op){
+            if(op === 'inc')
+            ++quantity;
+
+            if(op === 'dec')
+            --quantity;
+
+         quantityElement.innerText = quantity;
+        }
+    </script>
+</body>
+</html>
