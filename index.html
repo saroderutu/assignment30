@@ -3,76 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Card</title>
+    <title>Product Card </title>
+
+
     <style>
         body{
-            background-color: rgb(204, 152, 218);
+            background-color: rgb(202, 238, 130);
         }
-        .pcard{
-            border: 1.5px solid black;
-            border-radius: 15px;
+        .product-card{
+            border:1px solid black;
+            border-radius: 10px;
             padding: 10px;
-            height: 300px;
-            width: 300px;
+            height: 350px;
+            width: 350px;
             margin: 80px;
-            margin-left: 390px;
-            background-color: rgb(164, 13, 239);
+            margin-left: 500px;
+            background-color: rgb(92, 20, 97);
             box-shadow: 0px 0px 30px 1px;
+        
         }
-        .pcard-img{
+        .product-img{
             display: block;
             margin: 10px auto;
             border-radius: 7px 0px 7px 0px;
             box-shadow: 1px 1.5px 3px 1px;
         }
-        .pcard-heading{
+        .product-card-img{
+            display: block;
+            margin: 10px auto;
+            border-radius: 7px 0px 7px 0px;
+            box-shadow: 1px 1.5px 2px 1px;
+        }
+        .product-card-heading{
             text-align: center;
-            color: rgb(60, 9, 74);
+            color:rgb(239, 65, 146);
             font-size:25px;
             margin-top: 37px;
         }
-        .q-btn-container{
+        .product-btn-container{
             display: flex;
             justify-content: space-around;
             height: 30px;
             margin-top: 40px;
             
         }
-        .btn{
+        .p-btn{
+            
             cursor: pointer;
-            background-color: #a878b6;
+            background-color:rgb(239, 65, 146);
             border: none;
-            width: 22px;
+            width: 25px;
+        }
+        
+        .p-card{
+            font-size: 30px;
+            font-family:cursive;
         }
     </style>
+
+
 </head>
 <body>
-    <div class="pcard">
-        <img src="kingfisher.jpg"  height="150gypx" width="150px" class="pcard-img">
-        <h1 class="pcard-heading">KingFisher</h1>        
+    <div class="product-card">
+        <img src="kingfisher.jpg"  height="150px" width="150px" class="product-card-img">
+        <h1 class="product-card-heading">Butterfly</h1>        
            
-        <div class="q-btn-container">
-            <button type="button" class="btn" onclick="ChangeQuality('dec')">
+        <div class="product-btn-container">
+            <button type="button" class="p-btn" onclick="ChangeQuality('decr')">
                 -
             </button>
-            <span id="quantity">1</span>
-            <button type="button" class="btn" onclick="ChangeQuality('inc')">
+            <span class="p-card" id="measure">1</span>
+            <button type="button" class="p-btn" onclick="ChangeQuality('incr')">
                 +
             </button>
         </div>
     </div>
     <script>
-        const quantityElement=document.getElementById("quantity");
-        let quantity = parseInt(quantityElement.innerText);
+        const measureElement=document.getElementById("measure");
+        let measure = parseInt(measureElement.innerText);
 
         function ChangeQuality(op){
-            if(op === 'inc')
-            ++quantity;
+            if(op === 'incr')
+            ++measure;
 
-            if(op === 'dec')
-            --quantity;
+            if(op === 'decr')
+            --measure;
 
-         quantityElement.innerText = quantity;
+         measureElement.innerText = measure;
         }
     </script>
 </body>
